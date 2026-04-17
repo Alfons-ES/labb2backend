@@ -1,14 +1,15 @@
 const Database = require("better-sqlite3");
-const db = new Database("music.db");
+const db = new Database("cv.db");
 
 db.exec(`
-    CREATE TABLE IF NOT EXISTS music (
+    CREATE TABLE IF NOT EXISTS workexperience (
     id  INTEGER PRIMARY KEY AUTOINCREMENT,
-    title TEXT NOT NULL,
-    album TEXT NOT NULL,
-    artist TEXT NOT NULL,
-    year INTEGER,
-    genre TEXT
+    companyname TEXT NOT NULL,
+    jobtitle TEXT NOT NULL,
+    location TEXT NOT NULL,
+    startdate DATE,
+    enddate DATE,
+    description TEXT
     )
 `);
 
