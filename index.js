@@ -54,7 +54,7 @@ form.addEventListener('submit', async (e) => {// när användaren klickar submit
         message.textContent = "Startdatum får inte vara efter slutdatum!";
         return;
     }
-
+    //
     // skickar datan till server med post
     try {
         const res = await fetch('http://localhost:5000/workexperience', {

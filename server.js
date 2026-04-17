@@ -7,7 +7,7 @@ const cors = require("cors")
 const db = new Database("cv.db")
 
 const app = express();
-
+//middleware?
 app.use(cors());
 app.use(express.json());
 app.listen(5000, () => console.log("server open"))

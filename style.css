@@ -34,6 +34,8 @@ button {
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 16px;
+    border: 0;
+    background-color: rgb(192, 236, 200);
 }
 
 .error {
@@ -45,4 +47,12 @@ button {
     background-color: white;
     padding: 10px 50px;
     height: 100%;
+}
+
+a {
+    text-decoration: none;
+    background-color: rgb(72, 72, 72);
+    padding: 6px;
+    color: white;
+    border-radius: 5px;
 }
