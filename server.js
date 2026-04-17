@@ -35,7 +35,7 @@ app.post("/music", (req, res) => {
     }
 
     const stmt = db.prepare(`
-        INSERT INTO music (title, album, artist, year, genre) VALUES (?, ?, ?, ?)`);
+        INSERT INTO music (title, album, artist, year, genre) VALUES (?, ?, ?, ?, ?)`);
 
     try {
         const result = stmt.run(title, album, artist, year, genre);
@@ -46,7 +46,7 @@ app.post("/music", (req, res) => {
 })
 
 //ta bort låt
-app.delete("/music:id", (req, res) => {
-    const result = db.prepare("DELETE FROM books WHERE id=?").run(req.params.id);
+app.delete("/music/:id", (req, res) => {
+    const result = db.prepare("DELETE FROM music WHERE id=?").run(req.params.id);
     res.json({ message: "Deleted" });
 });
