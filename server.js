@@ -30,7 +30,7 @@ app.get("/workexperience/:id", (req, res) => {
 app.post("/workexperience", (req, res) => {
     const { companyname, jobtitle, location, startdate, enddate, description } = req.body;
 
-    if (!companyname || !jobtitle || !location) {
+    if (!companyname || !jobtitle || !location || !startdate || !enddate || !description) {
         return res.status(400).json({ message: "Fyll i alla fält." });
     }
 
