@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: auto;
+    background-color: rgb(48, 48, 48);
+}
+
+.experience {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+.delete-btn {
+    background: #ff0e0e;
+    color: white;
+    border: none;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.error {
+    color: red;
+}
+
+#app {
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px 50px;
+    height: 100%;
+}

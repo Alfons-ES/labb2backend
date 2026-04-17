@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lägg till</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <h1>Lägg till ny arbetslivserfarenhet</h1>
+        <a href="index.html">
+            < Tillbaka till lista</a>
+
+                <form id="form">
+                    <label>Företagets namn:</label>
+                    <input type="text" id="companyname" required>
+
+                    <label>Jobbtitel:</label>
+                    <input type="text" id="jobtitle" required>
+
+                    <label>Plats (ort):</label>
+                    <input type="text" id="location" required>
+
+                    <label>Startdatum (YYYY-MM-DD):</label>
+                    <input type="date" id="startdate" required>
+
+                    <label>Slutdatum (YYYY-MM-DD):</label>
+                    <input type="date" id="enddate">
+
+                    <label>Beskrivning:</label>
+                    <textarea id="description" rows="6" required></textarea>
+
+                    <button type="submit">Spara erfarenhet</button>
+                    <p id="message" class="error"></p>
+                </form>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
