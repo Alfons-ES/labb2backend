@@ -1,6 +1,6 @@
-Detta repository innehåller kod för ett enklare REST API byggt med Express. APIet är byggt för att hantera olika arbeten jag har haft. Grundläggande funktionalitet för CRUD (Create, Read, Update, Delete) är implementerad.
+Detta repository innehåller kod för ett enklare REST API byggt med Express. APIet är byggt för att hantera olika arbetslivserfarenheter jag har haft. Grundläggande funktionalitet för CRUD (Create, Read, Update, Delete) är implementerad.
 
-APIet använder sqlite3, Kör installations-skriptet install.js och det kommer skapa databastabellen nedan:
+APIet använder sqlite3, Kör installations-skriptet setup.js och det kommer skapa databastabellen nedan:
 workexperience (
     id  INTEGER PRIMARY KEY AUTOINCREMENT,
     companyname TEXT NOT NULL,

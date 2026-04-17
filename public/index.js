@@ -1,5 +1,6 @@
 window.onload = loadExperiences; //när sidan laddas in körs loadexperiences
 
+
 async function loadExperiences() {
     const res = await fetch('http://localhost:5000/workexperience');
     const data = await res.json();
