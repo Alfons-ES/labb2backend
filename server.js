@@ -17,7 +17,11 @@ app.listen(5000, () => console.log("server open"))
 app.get("/music", (req, res) => {
     const music = db.prepare("SELECT * FROM music").all();
     res.json(music);
-})
+});
 
 //ett album
-app.get("")
+app.get("/music/:id", (req, res) => {
+    const music = db.prepare("SELECT * FROM music WHERE id=?").get(req.params.id);
+    if (!music) return res.status(404).json({ error: "Not found" });
+    res.json(music);
+});
