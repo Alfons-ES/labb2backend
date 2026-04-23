@@ -17,7 +17,8 @@ async function loadExperiences() {
     <p><strong>Period:</strong> ${exp.startdate} - ${exp.enddate}</p>
     <p>${exp.description}</p>
     <button class="delete-btn" onclick="deleteExperience(${exp.id})">Ta bort</button>
-    `;
+    <button class="edit-btn" onclick="openEditForm(${exp.id}, '${exp.companyname}', '${exp.jobtitle}', '${exp.location}', '${exp.startdate}', '${exp.enddate}', '${exp.description}')">Redigera</button>
+`;
         container.appendChild(div);
     });
 }
@@ -75,3 +76,49 @@ form.addEventListener('submit', async (e) => {// när användaren klickar submit
         message.textContent = "Kunde inte nå servern";
     }
 });
+
+
+
+function openEditForm(id, companyname, jobtitle, location, startdate, enddate, description) {
+    document.getElementById('edit-id').value = id;
+    document.getElementById('edit-companyname').value = companyname;
+    document.getElementById('edit-jobtitle').value = jobtitle;
+    document.getElementById('edit-location').value = location;
+    document.getElementById('edit-startdate').value = startdate;
+    document.getElementById('edit-enddate').value = enddate;
+    document.getElementById('edit-description').value = description;
+    document.getElementById('edit-form-container').style.display = 'block';
+}
+
+function closeEditForm() {
+    document.getElementById('edit-form-container').style.display = 'none';
+}
+
+async function submitUpdate() {
+    const id = document.getElementById('edit-id').value;
+    const companyname = document.getElementById('edit-companyname').value;
+    const jobtitle = document.getElementById('edit-jobtitle').value;
+    const location = document.getElementById('edit-location').value;
+    const startdate = document.getElementById('edit-startdate').value;
+    const enddate = document.getElementById('edit-enddate').value;
+    const description = document.getElementById('edit-description').value;
+
+    if (enddate && startdate > enddate) {
+        alert("Startdatum får inte vara efter slutdatum!");
+        return;
+    }
+
+    const res = await fetch(`http://localhost:5000/workexperience/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ companyname, jobtitle, location, startdate, enddate, description })
+    });
+
+    if (res.ok) {
+        closeEditForm();
+        loadExperiences(); // uppdatera listan
+    } else {
+        const error = await res.json();
+        alert(error.message);
+    }
+}

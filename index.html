@@ -10,10 +10,23 @@
 
 <body>
     <div id="app">
+
         <h1>Mina Arbetslivserfarenheter</h1>
         <a href="add.html">Lägg till ny erfarenhet</a>
         <a href="about.html">Om</a>
         <hr>
+        <div id="edit-form-container" style="display:none;">
+            <h2>Redigera erfarenhet</h2>
+            <input id="edit-id" type="hidden">
+            <input id="edit-companyname" placeholder="Företag">
+            <input id="edit-jobtitle" placeholder="Jobbtitel">
+            <input id="edit-location" placeholder="Plats">
+            <input id="edit-startdate" type="date">
+            <input id="edit-enddate" type="date">
+            <textarea id="edit-description"></textarea>
+            <button onclick="submitUpdate()">Spara ändringar</button>
+            <button onclick="closeEditForm()">Avbryt</button>
+        </div>
         <div id="list"></div>
     </div>
 
