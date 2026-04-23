@@ -99,9 +99,9 @@ async function submitUpdate() {
     const companyname = document.getElementById('edit-companyname').value;
     const jobtitle = document.getElementById('edit-jobtitle').value;
     const location = document.getElementById('edit-location').value;
-    const startdate = document.getElementById('edit-startdate').value;
+    const startdate = document.getElementById('edit-startdate').value
     const enddate = document.getElementById('edit-enddate').value;
-    const description = document.getElementById('edit-description').value;
+    const description = document.getElementById('edit-description').value
 
     if (enddate && startdate > enddate) {
         alert("Startdatum får inte vara efter slutdatum!");
