@@ -56,7 +56,7 @@ app.put("/workexperience/:id", async (req, res) => {
         const updated = await WorkExperience.findByIdAndUpdate(
             req.params.id,
             { companyname, jobtitle, location, startdate, enddate, description },
-            { new: true, runValidators: true }
+            { returnDocument: 'after', runValidators: true }
         );
         if (!updated) return res.status(404).json({ message: "Hittades inte" });
         res.json({ message: "Uppdaterad", data: updated });
