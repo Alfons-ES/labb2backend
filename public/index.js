@@ -16,8 +16,8 @@ async function loadExperiences() {
     <p><strong>Plats:</strong> ${exp.location}</p>
     <p><strong>Period:</strong> ${exp.startdate} - ${exp.enddate}</p>
     <p>${exp.description}</p>
-    <button class="delete-btn" onclick="deleteExperience(${exp.id})">Ta bort</button>
-    <button class="edit-btn" onclick="openEditForm(${exp.id}, '${exp.companyname}', '${exp.jobtitle}', '${exp.location}', '${exp.startdate}', '${exp.enddate}', '${exp.description}')">Redigera</button>
+    <button class="delete-btn" onclick="deleteExperience(${exp._id})">Ta bort</button>
+    <button class="edit-btn" onclick="openEditForm(${exp._id}, '${exp.companyname}', '${exp.jobtitle}', '${exp.location}', '${exp.startdate}', '${exp.enddate}', '${exp.description}')">Redigera</button>
 `;
         container.appendChild(div);
     });
